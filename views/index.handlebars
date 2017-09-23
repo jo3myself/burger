@@ -1,0 +1,52 @@
+<div class="container">
+  <center><h3>EAT-DA-BURGER</h3></center>
+  <div class="row justify-content-center">
+    <img class="img-fluid rounded" alt="Responsive image" id="image" src="./assets/images.jpg">  
+  </div>
+  <br>
+
+  <div class="row">
+    <div class="col">   
+        <h5>READY</h5>
+        {{#each burgers}}
+          {{#unless this.devoured}}
+            <div>
+              <form class="form-inline" action="/{{this.id}}?_method=PUT" method="POST">                
+                <input type="hidden" name="devoured" value="true">
+                <label>{{this.burger_name}}</label>
+                <button class="btn btn-secondary button" type="submit">!EAT!</button>
+              </form>
+            </div>
+          {{/unless}}
+        {{/each}}     
+    </div>
+    <br>  
+
+    <div class="col">
+        <h5>NO MORE...</h5>
+        {{#each burgers}}
+          {{#if this.devoured}}
+            <div>
+              <label class="label"><center>No More {{this.burger_name}} ...</center></label>
+            </div>
+          {{/if}}
+        {{/each}}
+    </div>
+  </div>
+  <br>
+
+  <div class="row justify-content-center">
+    <form class="create-update-form" action="/" method="POST">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="submit">Add Burger</button>
+      </span>
+      <input type="text" class="form-control" name="name" placeholder="!!!BURGER!!!" aria-label="Product name">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="submit">Add Burger</button>
+      </span>
+    </div>
+    </form>
+  </div>
+
+</div>

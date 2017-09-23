@@ -1,0 +1,28 @@
+body {
+	background-color: #ffce5b;
+}
+
+#image {
+	justify-content: middle;
+}
+
+li {
+	list-style: none;
+	width: 50%;
+}
+
+label {
+	background-color: white;
+	padding: 5px;
+	width: 60%;
+}
+
+.button {
+	width: 30%;
+}
+
+.label {
+	background-color: lightgrey;
+	padding: 5px;
+	width: 100%;
+}
